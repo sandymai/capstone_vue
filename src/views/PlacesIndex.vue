@@ -1,11 +1,10 @@
 <template>
   <div class="places-index">
-    <h1>All Dog Friendly Places</h1>
+    <h1>Popular Dog Friendly Places!</h1>
     <div v-for="place in places">
-      <h2>{{ place.name }}</h2>
-      <!--       <img v-bind:src="photo.url">
-      <p>Width: {{ photo.width }}</p>
-      <p>Height: {{ photo.height }}</p> -->
+      <h3>Location & Address:</h3>
+      <p>{{ place.location }}</p>
+      <p>{{ place.address }}</p>
     </div>
   </div>
 </template>

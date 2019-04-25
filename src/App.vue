@@ -5,13 +5,16 @@
       |
       <router-link to="/about">About</router-link>
       |
-      <router-link to="/signup">Sign Up</router-link>
+      <router-link to="/dogfriendlyplaces">Dog Friendly Places</router-link>
       |
-      <router-link to="/login">Log In</router-link>
+      <router-link to="/signup" v-if="!jwt">Sign Up</router-link>
+      <div></div>
+      <router-link to="/login" v-if="!jwt">Log In</router-link>
+      <router-link to="/dogs-index" v-if="jwt">Your Dog Profiles</router-link>
       |
-      <router-link to="/logout">Log Out</router-link>
+      <router-link to="/logout" v-if="jwt">Log Out</router-link>
     </div>
-    <router-view />
+    <router-view v-on:changeJwt="setJwt()" />
   </div>
 </template>
 
@@ -36,3 +39,22 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function() {
+    return {
+      jwt: null
+    };
+  },
+  created: function() {
+    this.jwt = localStorage.jwt;
+    console.log("My jwt is", this.jwt);
+  },
+  methods: {
+    setJwt: function() {
+      this.jwt = localStorage.jwt;
+    }
+  }
+};
+</script>

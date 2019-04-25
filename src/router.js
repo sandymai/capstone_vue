@@ -1,9 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Places from "./views/PlacesIndex.vue";
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
+import DogsIndex from "./views/DogsIndex.vue";
+import DogsShow from "./views/DogsShow.vue";
 
 Vue.use(Router);
 
@@ -15,6 +18,11 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    {
+      path: "/dogfriendlyplaces",
+      name: "dogfriendlyplaces",
+      component: Places
     },
     {
       path: "/login",
@@ -30,6 +38,16 @@ export default new Router({
       path: "/signup",
       name: "signup",
       component: Signup
+    },
+    {
+      path: "/dogs-index",
+      name: "dogs-index",
+      component: DogsIndex
+    },
+    {
+      path: "/dogs/:id",
+      name: "dogs-show",
+      component: DogsShow
     },
     {
       path: "/about",
