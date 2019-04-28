@@ -15,7 +15,7 @@
       Description:
       <input type="text" v-model="dog.description" />
       <div></div>
-      <button v-on:click="updateDog(dog)">Update Product</button>
+      <button v-on:click="updateDog(dog)">Update Profile</button>
       <div></div>
       <button v-on:click="destroyDog(dog)">Destroy Profile</button>
     </div>

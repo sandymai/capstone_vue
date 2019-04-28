@@ -7,10 +7,15 @@
       |
       <router-link to="/dogfriendlyplaces">Dog Friendly Places</router-link>
       |
+      <router-link to="/events-index">All Playdate Events</router-link>
+      |
+      <router-link to="/events-new" v-if="jwt">Create Playdate Event</router-link>
       <router-link to="/signup" v-if="!jwt">Sign Up</router-link>
       <div></div>
       <router-link to="/login" v-if="!jwt">Log In</router-link>
-      <router-link to="/dogs-index" v-if="jwt">Your Dog Profiles</router-link>
+      <router-link to="/dogs-profiles" v-if="jwt">Your Dog Profiles</router-link>
+      |
+      <router-link to="/my-events" v-if="jwt">View My Playdate Events</router-link>
       |
       <router-link to="/logout" v-if="jwt">Log Out</router-link>
     </div>

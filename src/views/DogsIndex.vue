@@ -6,13 +6,14 @@
       <p>Name: {{ dog.dog_name }}</p>
       <p>Breed: {{ dog.breed }}</p>
       <p>Bio: {{ dog.description }}</p>
+      <button v-on:click="showDog(dog)">View Profile</button>
     </div>
+    <!--     <div v-if="dog === currentDog">
+      <p>Name: {{ dog.dog_name }}</p>
+      <p>Breed: {{ dog.breed }}</p>
+      <p>Bio: {{ dog.description }}</p>
+    </div> -->
   </div>
-  <!--   <div 
-  v-bind:key"dogs.id"
-  >
-  <router-link v-bind:to="`/dogs/${dog.id}`">More Info</router-link>
-  </div> -->
 </template>
 
 <script>
@@ -29,6 +30,14 @@ export default {
       this.dogs = response.data;
     });
   },
-  methods: {}
+  methods: {
+    showDog: function(dog) {
+      if (this.currentDog === dog) {
+        this.currentDog = null;
+      } else {
+        this.currentDog = dog;
+      }
+    }
+  }
 };
 </script>

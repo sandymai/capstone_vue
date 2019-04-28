@@ -7,6 +7,9 @@ import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import DogsIndex from "./views/DogsIndex.vue";
 import DogsShow from "./views/DogsShow.vue";
+import EventsIndex from "./views/EventsIndex.vue";
+import EventsNew from "./views/EventsNew.vue";
+import EventsShow from "./views/EventsShow.vue";
 
 Vue.use(Router);
 
@@ -40,7 +43,7 @@ export default new Router({
       component: Signup
     },
     {
-      path: "/dogs-index",
+      path: "/dogs-profiles",
       name: "dogs-index",
       component: DogsIndex
     },
@@ -48,6 +51,21 @@ export default new Router({
       path: "/dogs/:id",
       name: "dogs-show",
       component: DogsShow
+    },
+    {
+      path: "/events-index",
+      name: "events-index",
+      component: EventsIndex
+    },
+    {
+      path: "/events-new",
+      name: "events-new",
+      component: EventsNew
+    },
+    {
+      path: "/my-events",
+      name: "events-show",
+      component: EventsShow
     },
     {
       path: "/about",

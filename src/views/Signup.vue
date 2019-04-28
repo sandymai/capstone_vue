@@ -19,6 +19,10 @@
           <input type="email" class="form-control" v-model="email" />
         </div>
         <div class="form-group">
+          <label>Phone Number :</label>
+          <input type="phone_number" class="form-control" v-model="phone_number" />
+        </div>
+        <div class="form-group">
           <label>Password :</label>
           <input type="password" class="form-control" v-model="password" />
         </div>
@@ -37,6 +41,7 @@ export default {
       first_name: "",
       last_name: "",
       email: "",
+      phone_number: "",
       password: "",
       errors: []
     };
