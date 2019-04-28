@@ -1,5 +1,46 @@
 <template>
   <div id="app">
+    <!-- HEADER STARTS-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index-2.html"><img src="img/logo.png" alt="Logo" /></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Events
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="full-width.html">Full Width</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog-article.html">Blog Article</a></li>
+                <!-- <li><a href="/signup">Sign Up</a></li> -->
+              </ul>
+            </li>
+            <li><a href="/dogfriendlyplaces">All Dog Friendly Places</a></li>
+            <li><a href="blog.html">News</a></li>
+            <li><router-link to="/login" v-if="!jwt">Log In</router-link></li>
+            <li></li>
+            <li><router-link to="/logout" v-if="jwt">Log Out</router-link></li>
+            <li></li>
+            <li class="sign-up">
+              <a href="/signup"><span class="white">Sign Up</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- HEADER ENDS -->
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
@@ -20,28 +61,25 @@
       <router-link to="/logout" v-if="jwt">Log Out</router-link>
     </div>
     <router-view v-on:changeJwt="setJwt()" />
+    <!-- FOOTER -->
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              @ Copyright. All Rights Reserved. Created by
+              <a href="http://www.themearmada.com/">Theme Armada.</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  padding-top: 120px;
 }
 </style>
 
