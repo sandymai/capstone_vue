@@ -1,13 +1,55 @@
 <template>
   <div class="places-index">
+    <section id="page-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 title-white">
+            <h2>Paw-pular Dog Friendly Places!</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <h1>Popular Dog Friendly Places!</h1>
     <div v-for="place in places">
       <h3>Location & Address:</h3>
       <p>{{ place.location }}</p>
       <p>{{ place.address }}</p>
     </div>
+
+    <body>
+      <section id="message">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+              <h4 class="gray">
+                Off-leash play in the city is only allowed in the dog-friendly areas at designated Chicago Park District
+                parks. Chicago Dog Parks are often referred to as dog-friendly areas and we have conveniently provided a
+                list of some of the most popular places!
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
   </div>
 </template>
+
+<head>
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/custom-styles.css" />
+
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
 
 <script>
 import axios from "axios";

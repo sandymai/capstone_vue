@@ -9,26 +9,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index-2.html"><img src="img/logo.png" alt="Logo" /></a>
+          <a class="navbar-header" href="https://i.ibb.co/jWB0SSP/logo-transparent.png">
+            <img src="https://i.ibb.co/jWB0SSP/logo-transparent.png" alt="Logo" />
+          </a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="/">Home</a></li>
+            <!-- <li class="active"><a href="/">Home</a></li> THIS MAKES THE BUTTON WHITE -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Events
+                Playdates
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="full-width.html">Full Width</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog-article.html">Blog Article</a></li>
+                <li><a href="/events-index">View All Playdates</a></li>
+                <li><a href="/my-events" v-if="jwt">My Playdates</a></li>
+                <li><a href="/events-new" v-if="jwt">Create New Playdate</a></li>
                 <!-- <li><a href="/signup">Sign Up</a></li> -->
               </ul>
             </li>
-            <li><a href="/dogfriendlyplaces">All Dog Friendly Places</a></li>
-            <li><a href="blog.html">News</a></li>
+            <li><a href="/dogfriendlyplaces">Dog Friendly Places</a></li>
+            <li><a href="/dogs-profiles" v-if="jwt">My Dog Profiles</a></li>
             <li><router-link to="/login" v-if="!jwt">Log In</router-link></li>
             <li></li>
             <li><router-link to="/logout" v-if="jwt">Log Out</router-link></li>
