@@ -44,7 +44,7 @@
       </div>
     </div>
     <!-- HEADER ENDS -->
-    <div id="nav">
+    <!--     <div id="nav">
       <router-link to="/">Home</router-link>
       |
       <router-link to="/about">About</router-link>
@@ -62,7 +62,7 @@
       <router-link to="/my-events" v-if="jwt">View My Playdate Events</router-link>
       |
       <router-link to="/logout" v-if="jwt">Log Out</router-link>
-    </div>
+    </div> -->
     <router-view v-on:changeJwt="setJwt()" />
     <!-- FOOTER -->
     <section id="footer">

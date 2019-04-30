@@ -7,13 +7,17 @@
     <form v-on:submit.prevent="createEvent()">
       <div>
         Start Time :
-        <input type="text" v-model="newStartTime" />
+        <input type="datetime-local" v-model="newStartTime" />
         <div></div>
         End Time :
-        <input type="text" v-model="newEndTime" />
+        <input type="datetime-local" v-model="newEndTime" />
         <div></div>
         Location :
-        <input type="text" v-model="newLocation" />
+        <!-- <input type="text" v-model="newLocation" /> -->
+        <select v-model="newLocation">
+          <option v-for="place in places" v-bind:value="place.id">{{ place.location }}</option>
+        </select>
+        <div></div>
       </div>
       <input type="submit" value="Create Event!" />
     </form>
@@ -28,17 +32,26 @@ export default {
       newStartTime: "",
       newEndTime: "",
       newLocation: "",
-      errors: []
+      errors: [],
+      places: []
     };
+  },
+  created: function() {
+    axios.get("/api/places").then(response => {
+      this.places = response.data;
+      console.log(this.places);
+    });
+    // make a web request to get all the places
+    // upon success, set this.places equal to response.data
   },
   methods: {
     createEvent: function() {
-      console.log("Create an Event.");
+      console.log("C");
       this.errors = [];
       var params = {
-        body_starttime: this.newStartTime,
-        body_endtime: this.newEndTime,
-        body_location: this.newLocation
+        start_datetime: this.newStartTime,
+        end_datetime: this.newEndTime,
+        places_id: this.newLocation
       };
       axios
         .post("/api/events", params)

@@ -7,12 +7,9 @@
       <p>Breed: {{ dog.breed }}</p>
       <p>Bio: {{ dog.description }}</p>
       <button v-on:click="showDog(dog)">View Profile</button>
+      <div></div>
+      <router-link v-bind:to="`/dogs/${dog.id}`">Edit Profile</router-link>
     </div>
-    <!--     <div v-if="dog === currentDog">
-      <p>Name: {{ dog.dog_name }}</p>
-      <p>Breed: {{ dog.breed }}</p>
-      <p>Bio: {{ dog.description }}</p>
-    </div> -->
   </div>
 </template>
 
