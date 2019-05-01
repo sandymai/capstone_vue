@@ -2,10 +2,12 @@
   <div class="events-show">
     <h1>My Playdate Events</h1>
     <div v-for="event in events">
-      <h3>Event Details:</h3>
-      <p>{{ event.start_datetime }}</p>
-      <p>{{ event.end_datetime }}</p>
-      <p>{{ event.places_id }}</p>
+      <div align="center">
+        <h2 class="text-muted">Playdate Details:</h2>
+        <p>{{ event.start_datetime }}</p>
+        <p>{{ event.end_datetime }}</p>
+        <p>{{ event.place.location }}</p>
+      </div>
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <section id="page-title">
       <div class="container">
         <div class="row">
-          <div class="col-md-5 title-white">
+          <div class="col-md-12 title-white">
             <h2>Paw-pular Dog Friendly Places!</h2>
           </div>
         </div>
@@ -12,9 +12,11 @@
 
     <h1>Popular Dog Friendly Places!</h1>
     <div v-for="place in places">
-      <h3>Location & Address:</h3>
-      <p>{{ place.location }}</p>
-      <p>{{ place.address }}</p>
+      <div align="center">
+        <h2 class="text-muted">Location & Address:</h2>
+        <p>{{ place.location }}</p>
+        <p>{{ place.address }}</p>
+      </div>
     </div>
 
     <body>
@@ -34,6 +36,12 @@
     </body>
   </div>
 </template>
+
+<!-- <style>
+body {
+  padding-bottom: 20px;
+}
+</style> -->
 
 <head>
     <link rel="stylesheet" href="css/font-awesome.min.css" />

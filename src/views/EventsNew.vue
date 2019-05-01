@@ -46,17 +46,17 @@ export default {
   },
   methods: {
     createEvent: function() {
-      console.log("C");
       this.errors = [];
       var params = {
         start_datetime: this.newStartTime,
         end_datetime: this.newEndTime,
-        places_id: this.newLocation
+        place_id: this.newLocation
       };
+      console.log("testtt", params);
       axios
         .post("/api/events", params)
         .then(response => {
-          this.$router.push("/");
+          this.$router.push("/my-events");
         })
         .catch(error => {
           console.log(error.response.data.errors);
