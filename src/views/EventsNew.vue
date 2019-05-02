@@ -1,6 +1,6 @@
 <template>
   <div class="events-new">
-    <h1>Create a New Playdate Event</h1>
+    <h2 class="text-muted">Create a New Playdate Event</h2>
     <ul>
       <li v-for="error in errors">{{ error }}</li>
     </ul>

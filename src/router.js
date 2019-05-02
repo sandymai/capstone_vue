@@ -10,6 +10,7 @@ import DogsShow from "./views/DogsShow.vue";
 import EventsIndex from "./views/EventsIndex.vue";
 import EventsNew from "./views/EventsNew.vue";
 import EventsShow from "./views/EventsShow.vue";
+import DogsNew from "./views/DogsNew.vue";
 
 Vue.use(Router);
 
@@ -66,6 +67,11 @@ export default new Router({
       path: "/my-events",
       name: "events-show",
       component: EventsShow
+    },
+    {
+      path: "/dogs-new",
+      name: "dogs-new",
+      component: DogsNew
     },
     {
       path: "/about",

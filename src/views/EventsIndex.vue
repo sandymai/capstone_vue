@@ -3,11 +3,11 @@
     <h1>All Playdate Events!</h1>
     <div v-for="event in events">
       <div align="center">
-        <h2 class="text-muted">Event Details:</h2>
+        <h2 class="text-muted">All Playdate Events!</h2>
         <p>{{ event.start_datetime }}</p>
         <p>{{ event.end_datetime }}</p>
         <p>Where: {{ event.place.location }}</p>
-        <button v-on:click="addtoevent">Join Playdate!</button>
+        <button v-on:click="createEventAttendees()">Join Playdate!</button>
       </div>
     </div>
   </div>
@@ -30,13 +30,32 @@ export default {
     });
   },
   methods: {
-    addtoevent: function() {
+    createEventAttendees: function() {
+      this.errors = [];
+      var params = {
+        event_id: this.eventid
+      };
+      console.log("", params);
+      axios
+        .post("/api/event_attendees", params)
+        .then(response => {
+          this.$router.push("/my-events");
+        })
+        .catch(error => {
+          console.log(error.response.data.errors);
+          this.errors = error.response.data.errors;
+        });
+    },
+
+    addtoevent: function(event) {
       console.log("Hello.");
       var params = {
         start_datetime: this.startDateTime,
         end_datetime: this.endDateTime,
         event_id: this.eventId,
         user_id: this.userId
+
+        // this.$router.push("/my-events");
         // location: this.place.location
       };
     }

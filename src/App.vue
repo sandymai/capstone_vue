@@ -31,7 +31,19 @@
               </ul>
             </li>
             <li><a href="/dogfriendlyplaces">Dog Friendly Places</a></li>
-            <li><a href="/dogs-profiles" v-if="jwt">My Dog Profiles</a></li>
+            <!-- <li><a href="/dogs-profiles" v-if="jwt">My Dog Profiles</a></li> -->
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Dog Profiles
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/dogs-profiles" v-if="jwt">View All Dog Profiles</a></li>
+                <li><a href="/dogs-new" v-if="jwt">Add New Dog Profile</a></li>
+              </ul>
+            </li>
+
             <li><router-link to="/login" v-if="!jwt">Log In</router-link></li>
             <li></li>
             <li><router-link to="/logout" v-if="jwt">Log Out</router-link></li>

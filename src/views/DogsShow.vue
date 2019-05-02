@@ -1,6 +1,7 @@
 <template>
   <div class="dogs-show">
     <h2>Dog Details:</h2>
+    <img v-bind:src="dog.image_url" />
     <p>{{ dog.dog_name }}</p>
     <p>{{ dog.breed }}</p>
     <p>{{ dog.description }}</p>
@@ -48,12 +49,14 @@ export default {
       axios.patch("/api/dogs/" + dog.id, params).then(response => {
         console.log("Successfully Updated", response.data);
         dog = response.data;
+        this.$router.push("/dogs-profiles");
       });
     },
+
     destroyDog: function(dog) {
       axios.delete("/api/dogs/" + dog.id).then(response => {
         console.log("Successfully Deleted", response.data);
-        this.$router.push("/");
+        this.$router.push("/dogs-profiles");
       });
     }
   }
