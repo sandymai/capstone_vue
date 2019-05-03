@@ -7,7 +7,7 @@
         <p>{{ event.start_datetime }}</p>
         <p>{{ event.end_datetime }}</p>
         <p>Where: {{ event.place.location }}</p>
-        <button v-on:click="createEventAttendees()">Join Playdate!</button>
+        <button v-on:click="createEventAttendees(event.id)">Join Playdate!</button>
       </div>
     </div>
   </div>
@@ -30,10 +30,10 @@ export default {
     });
   },
   methods: {
-    createEventAttendees: function() {
+    createEventAttendees: function(event_id) {
       this.errors = [];
       var params = {
-        event_id: this.eventid
+        event_id: event_id
       };
       console.log("", params);
       axios

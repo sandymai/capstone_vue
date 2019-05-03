@@ -24,7 +24,7 @@ export default {
   },
   created: function() {
     axios.get("/api/events?only_mine=true").then(response => {
-      console.log(response);
+      console.log(response.data);
       this.events = response.data;
     });
   },
