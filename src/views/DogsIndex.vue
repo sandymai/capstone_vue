@@ -1,9 +1,9 @@
 <template>
   <div class="dogs-index">
-    <h1>Your Dog Profiles</h1>
+    <h2>Your Dog Profiles</h2>
     <div v-for="dog in dogs">
       <div align="center">
-        <h3>Doggo Details:</h3>
+        <h2 class="text-muted">Doggo Details:</h2>
         <p>Name: {{ dog.dog_name }}</p>
         <p>Breed: {{ dog.breed }}</p>
         <p>Description: {{ dog.description }}</p>

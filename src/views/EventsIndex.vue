@@ -1,13 +1,15 @@
 <template>
   <div class="events-index">
     <h1>All Playdate Events!</h1>
-    <div v-for="event in events">
-      <div align="center">
-        <h2 class="text-muted">All Playdate Events!</h2>
-        <p>{{ event.start_datetime }}</p>
-        <p>{{ event.end_datetime }}</p>
-        <p>Where: {{ event.place.location }}</p>
-        <button v-on:click="createEventAttendees(event.id)">Join Playdate!</button>
+    <div align="center">
+      <h2 class="text-muted">All Playdate Events!</h2>
+      <div v-for="event in events">
+        <div align="center">
+          <p>{{ event.start_datetime }}</p>
+          <p>{{ event.end_datetime }}</p>
+          <p>Where: {{ event.place.location }}</p>
+          <button v-on:click="createEventAttendees(event.id)">Join Playdate!</button>
+        </div>
       </div>
     </div>
   </div>

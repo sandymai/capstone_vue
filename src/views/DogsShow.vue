@@ -1,6 +1,6 @@
 <template>
   <div class="dogs-show">
-    <h2>Dog Details:</h2>
+    <h2 class="text-muted">Dog Details:</h2>
     <img v-bind:src="dog.image_url" />
     <p>{{ dog.dog_name }}</p>
     <p>{{ dog.breed }}</p>
