@@ -17,11 +17,17 @@
       <div></div>
       <button v-on:click="updateDog(dog)">Update Profile</button>
       <div></div>
-      <button v-on:click="destroyDog(dog)">Destroy Profile</button>
+      <button v-on:click="destroyDog(dog)">Delete Profile</button>
     </div>
   </div>
   <!-- <router-link to="/">Back to View All Dogs</router-link> -->
 </template>
+
+<style scoped>
+img {
+  width: 400px;
+}
+</style>
 
 <script>
 import axios from "axios";

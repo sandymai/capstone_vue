@@ -9,6 +9,10 @@
           <p>{{ event.end_datetime }}</p>
           <p>Where: {{ event.place.location }}</p>
           <button v-on:click="createEventAttendees(event.id)">Join Playdate!</button>
+          <div></div>
+          <router-link v-bind:to="`/events-show/${event.id}`" tag="button">
+            See the Dogs Attending
+          </router-link>
         </div>
       </div>
     </div>
@@ -46,6 +50,7 @@ export default {
         .catch(error => {
           console.log(error.response.data.errors);
           this.errors = error.response.data.errors;
+          this.$router.push("/signup");
         });
     },
 

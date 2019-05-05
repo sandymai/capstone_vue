@@ -1,17 +1,20 @@
 <template>
-  <div class="events-show">
-    <h2>My Playdate Events</h2>
-    <div v-for="event_attendee in event_attendees" v-if="event_attendee.event">
-      <div align="center">
-        <h2 class="text-muted">Playdate Details:</h2>
-        <p>{{ event_attendee.event.start_datetime }}</p>
-        <p>{{ event_attendee.event.end_datetime }}</p>
-        <p>{{ event_attendee.event.place.location }}</p>
-        <button v-on:click="destroyEventAttendee(event_attendee)">Remove Playdate</button>
-      </div>
+  <div class="attendees-show">
+    <h2 class="text-muted" align="center">All Dogs Attending This Playdate:</h2>
+    <div align="center" v-for="dog in event.dogs">
+      <img v-bind:src="dog.image_url" />
+      <p>Name: {{ dog.dog_name }}</p>
+      <p>Breed: {{ dog.breed }}</p>
+      <p>Description: {{ dog.description }}</p>
     </div>
   </div>
 </template>
+
+<style scoped>
+img {
+  width: 400px;
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -19,24 +22,16 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      event_attendees: []
+      event: {}
     };
   },
   created: function() {
-    axios.get("/api/event_attendees").then(response => {
-      console.log(response.data);
-      this.event_attendees = response.data;
+    axios.get("/api/events/" + this.$route.params.id).then(response => {
+      this.event = response.data;
+      console.log(this.event);
     });
   },
-  methods: {
-    destroyEventAttendee: function(event_attendee) {
-      axios.delete("/api/event_attendees/" + event_attendee.id).then(response => {
-        console.log("Successfully Removed", response.data);
-        // this.$router.push("/my-events");
-        var index = this.event_attendees.indexOf(event_attendee);
-        this.event_attendees.splice(index, 1);
-      });
-    }
-  }
+
+  methods: {}
 };
 </script>

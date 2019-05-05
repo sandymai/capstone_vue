@@ -15,10 +15,9 @@
   </div>
 </template>
 
-<style></style>
-<style>
+<style scoped>
 img {
-  width: 220px;
+  width: 400px;
 }
 </style>
 

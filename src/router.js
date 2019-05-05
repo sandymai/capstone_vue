@@ -9,8 +9,9 @@ import DogsIndex from "./views/DogsIndex.vue";
 import DogsShow from "./views/DogsShow.vue";
 import EventsIndex from "./views/EventsIndex.vue";
 import EventsNew from "./views/EventsNew.vue";
-import EventsShow from "./views/EventsShow.vue";
+import EventAttendeesIndex from "./views/EventAttendeesIndex.vue";
 import DogsNew from "./views/DogsNew.vue";
+import EventsShow from "./views/EventsShow.vue";
 
 Vue.use(Router);
 
@@ -65,13 +66,18 @@ export default new Router({
     },
     {
       path: "/my-events",
-      name: "events-show",
-      component: EventsShow
+      name: "event-attendees-show",
+      component: EventAttendeesIndex
     },
     {
       path: "/dogs-new",
       name: "dogs-new",
       component: DogsNew
+    },
+    {
+      path: "/events-show/:id",
+      name: "events-show",
+      component: EventsShow
     },
     {
       path: "/about",
