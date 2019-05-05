@@ -24,7 +24,7 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="/events-index">View All Playdates</a></li>
+                <li><a href="/events-index">View Upcoming Playdates</a></li>
                 <li><a href="/my-events" v-if="jwt">My Playdates</a></li>
                 <li><a href="/events-new" v-if="jwt">Create New Playdate</a></li>
                 <!-- <li><a href="/signup">Sign Up</a></li> -->
@@ -33,14 +33,14 @@
             <li><a href="/dogfriendlyplaces">Dog Friendly Places</a></li>
             <!-- <li><a href="/dogs-profiles" v-if="jwt">My Dog Profiles</a></li> -->
 
-            <li class="dropdown">
+            <li class="dropdown" v-if="jwt">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Dog Profiles
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><a href="/dogs-profiles" v-if="jwt">View All Dog Profiles</a></li>
-                <li><a href="/dogs-new" v-if="jwt">Add New Dog Profile</a></li>
+                <li><a href="/dogs-profiles">View All Dog Profiles</a></li>
+                <li><a href="/dogs-new">Add New Dog Profile</a></li>
               </ul>
             </li>
 

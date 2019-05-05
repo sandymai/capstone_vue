@@ -5,7 +5,7 @@
       <ul>
         <li v-for="error in errors">{{ error }}</li>
       </ul>
-      <form v-on:submit.prevent="createDog()">
+      <form v-on:submit.prevent="submit()">
         <div>
           Dog Name :
           <input type="text" v-model="newDogName" />
@@ -33,7 +33,7 @@ export default {
       newDogName: "",
       newBreed: "",
       newDescription: "",
-      image_url: "",
+      newDogImage: "",
       errors: []
     };
   },
@@ -46,7 +46,7 @@ export default {
   methods: {
     setFile: function(event) {
       if (event.target.files.length > 0) {
-        this.image_url = event.target.files[0];
+        this.newDogImage = event.target.files[0];
       }
     },
     submit: function() {
@@ -54,34 +54,34 @@ export default {
       formData.append("dog_name", this.newDogName);
       formData.append("breed", this.newBreed);
       formData.append("description", this.newDescription);
-      formData.append("image_url", this.imageUrl);
+      formData.append("image_url", this.newDogImage);
 
       axios.post("/api/dogs", formData).then(response => {
-        this.dog_name = "";
-        this.breed = "";
-        this.description = "";
+        this.newDogName = "";
+        this.newBreed = "";
+        this.newDescription = "";
         this.$refs.fileInput.value = "";
       });
-    },
-
-    createDog: function() {
-      this.errors = [];
-      var params = {
-        dog_name: this.newDogName,
-        breed: this.newBreed,
-        description: this.newDescription
-      };
-      console.log("testtt", params);
-      axios
-        .post("/api/dogs", params)
-        .then(response => {
-          this.$router.push("/dogs-profiles");
-        })
-        .catch(error => {
-          console.log(error.response.data.errors);
-          this.errors = error.response.data.errors;
-        });
     }
+    // createDog: function() {
+    //   this.errors = [];
+    //   var params = {
+    //     dog_name: this.newDogName,
+    //     breed: this.newBreed,
+    //     description: this.newDescription,
+    //     image_url: this.newDogImage
+    //   };
+    //   console.log("testtt", params);
+    //   axios
+    //     .post("/api/dogs", params)
+    //     .then(response => {
+    //       this.$router.push("/dogs-profiles");
+    //     })
+    //     .catch(error => {
+    //       console.log(error.response.data.errors);
+    //       this.errors = error.response.data.errors;
+    //     });
+    // }
   }
 };
 </script>

@@ -4,6 +4,7 @@
     <div v-for="dog in dogs">
       <div align="center">
         <h2 class="text-muted">Doggo Details:</h2>
+        <img v-bind:src="dog.image_url" />
         <p>Name: {{ dog.dog_name }}</p>
         <p>Breed: {{ dog.breed }}</p>
         <p>Description: {{ dog.description }}</p>
@@ -13,6 +14,13 @@
     </div>
   </div>
 </template>
+
+<style></style>
+<style>
+img {
+  width: 220px;
+}
+</style>
 
 <script>
 import axios from "axios";

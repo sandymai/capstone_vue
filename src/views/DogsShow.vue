@@ -1,12 +1,11 @@
 <template>
   <div class="dogs-show">
-    <h2 class="text-muted">Dog Details:</h2>
+    <h2 class="text-muted">Edit Your Dog's Profile</h2>
     <img v-bind:src="dog.image_url" />
     <p>{{ dog.dog_name }}</p>
     <p>{{ dog.breed }}</p>
     <p>{{ dog.description }}</p>
     <div>
-      <h4>Edit Dog Profile</h4>
       Dog Name:
       <input type="text" v-model="dog.dog_name" />
       <div></div>
