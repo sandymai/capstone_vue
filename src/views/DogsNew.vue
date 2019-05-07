@@ -61,27 +61,9 @@ export default {
         this.newBreed = "";
         this.newDescription = "";
         this.$refs.fileInput.value = "";
+        this.$router.push("/dogs-profiles");
       });
     }
-    // createDog: function() {
-    //   this.errors = [];
-    //   var params = {
-    //     dog_name: this.newDogName,
-    //     breed: this.newBreed,
-    //     description: this.newDescription,
-    //     image_url: this.newDogImage
-    //   };
-    //   console.log("testtt", params);
-    //   axios
-    //     .post("/api/dogs", params)
-    //     .then(response => {
-    //       this.$router.push("/dogs-profiles");
-    //     })
-    //     .catch(error => {
-    //       console.log(error.response.data.errors);
-    //       this.errors = error.response.data.errors;
-    //     });
-    // }
   }
 };
 </script>

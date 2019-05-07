@@ -9,8 +9,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-header" href="https://i.ibb.co/jWB0SSP/logo-transparent.png">
-            <img src="https://i.ibb.co/jWB0SSP/logo-transparent.png" alt="Logo" />
+          <a class="navbar-header" href="https://i.ibb.co/GWyBw7G/PPPP.png">
+            <img src="https://i.ibb.co/GWyBw7G/PPPP.png" alt="Logo" />
           </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -55,26 +55,6 @@
         </div>
       </div>
     </div>
-    <!-- HEADER ENDS -->
-    <!--     <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-      |
-      <router-link to="/dogfriendlyplaces">Dog Friendly Places</router-link>
-      |
-      <router-link to="/events-index">All Playdate Events</router-link>
-      |
-      <router-link to="/events-new" v-if="jwt">Create Playdate Event</router-link>
-      <router-link to="/signup" v-if="!jwt">Sign Up</router-link>
-      <div></div>
-      <router-link to="/login" v-if="!jwt">Log In</router-link>
-      <router-link to="/dogs-profiles" v-if="jwt">Your Dog Profiles</router-link>
-      |
-      <router-link to="/my-events" v-if="jwt">View My Playdate Events</router-link>
-      |
-      <router-link to="/logout" v-if="jwt">Log Out</router-link>
-    </div> -->
     <router-view v-on:changeJwt="setJwt()" />
     <!-- FOOTER -->
     <section id="footer">
@@ -82,8 +62,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p>
-              @ Copyright. All Rights Reserved. Created by
-              <a href="http://www.themearmada.com/">Theme Armada.</a>
+              @ Copyright. All Rights Reserved. Created by Sandy Mai.
             </p>
           </div>
         </div>
@@ -94,7 +73,7 @@
 
 <style>
 body {
-  padding-top: 120px;
+  padding-top: 100px;
 }
 </style>
 

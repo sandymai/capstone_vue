@@ -15,7 +15,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 margin-30">
-            <h3>Blahhhhhhh</h3>
+            <h3>Learn Why You Should Join the Party</h3>
             <p class="lead">More blahhhh.</p>
             <p class="white">
               This is where info about the app goes
@@ -44,11 +44,11 @@
         <div class="row">
           <!--Team Member-->
           <div class="col-sm-3 text-center team-member">
-            <img src="img/team-01.png" class="img-responsive" alt="Title" />
+            <img src="https://i.ibb.co/4MW9SW3/Screen-Shot-2019-05-06-at-8-05-24-PM.png" alt="Title" />
             <!-- <a href="individual-team-member.html"> -->
               <span class="info">
                 <span>
-                  <strong>First Last</strong>
+                  <strong>Noah</strong>
                   <br />
                   <em>Attended 45 Playdates</em>
                 </span>
@@ -58,11 +58,11 @@
 
           <!--Team Member-->
           <div class="col-sm-3 text-center team-member">
-            <img src="img/team-02.png" class="img-responsive" alt="Title" />
+            <img src="https://i.ibb.co/rf45cJm/Screen-Shot-2019-05-06-at-8-06-28-PM.png" class="img-responsive" alt="Title" />
             <!-- <a href="individual-team-member.html"> -->
               <span class="info">
                 <span>
-                  <strong>First Last</strong>
+                  <strong>Shorty</strong>
                   <br />
                   <em>Attended 39 Playdates</em>
                 </span>
@@ -72,11 +72,11 @@
 
           <!--Team Member-->
           <div class="col-sm-3 text-center team-member">
-            <img src="img/team-03.png" class="img-responsive" alt="Title" />
+            <img src="https://i.ibb.co/b6MYmJJ/Screen-Shot-2019-05-06-at-8-08-31-PM.png" class="img-responsive" alt="Title" />
             <!-- <a href="individual-team-member.html"> -->
               <span class="info">
                 <span>
-                  <strong>First Last</strong>
+                  <strong>Harriet</strong>
                   <br />
                   <em>Attended 37 Playdates</em>
                 </span>
@@ -86,11 +86,11 @@
 
           <!--Team Member-->
           <div class="col-sm-3 text-center team-member">
-            <img src="img/team-04.png" class="img-responsive" alt="Title" />
+            <img src="https://i.ibb.co/x8QZJ6q/Screen-Shot-2019-05-06-at-8-10-47-PM.png" class="img-responsive" alt="Title" />
             <!-- <a href="individual-team-member.html"> -->
               <span class="info">
                 <span>
-                  <strong>First Last</strong>
+                  <strong>Spitfire</strong>
                   <br />
                   <em>Attended 33 Playdates</em>
                 </span>

@@ -1,23 +1,25 @@
 <template>
   <div class="dogs-show">
-    <h2 class="text-muted">Edit Your Dog's Profile</h2>
-    <img v-bind:src="dog.image_url" />
-    <p>{{ dog.dog_name }}</p>
-    <p>{{ dog.breed }}</p>
-    <p>{{ dog.description }}</p>
-    <div>
-      Dog Name:
-      <input type="text" v-model="dog.dog_name" />
-      <div></div>
-      Breed:
-      <input type="text" v-model="dog.breed" />
-      <div></div>
-      Description:
-      <input type="text" v-model="dog.description" />
-      <div></div>
-      <button v-on:click="updateDog(dog)">Update Profile</button>
-      <div></div>
-      <button v-on:click="destroyDog(dog)">Delete Profile</button>
+    <div align="center">
+      <h2 class="text-muted">Edit Your Dog's Profile</h2>
+      <img v-bind:src="dog.image_url" />
+      <p>{{ dog.dog_name }}</p>
+      <p>{{ dog.breed }}</p>
+      <p>{{ dog.description }}</p>
+      <div>
+        Name:
+        <input type="text" v-model="dog.dog_name" />
+        <div></div>
+        Breed:
+        <input type="text" v-model="dog.breed" />
+        <div></div>
+        Description:
+        <input type="text" v-model="dog.description" />
+        <div></div>
+        <button v-on:click="updateDog(dog)">Update Profile</button>
+        <div></div>
+        <button v-on:click="destroyDog(dog)">Delete Profile</button>
+      </div>
     </div>
   </div>
   <!-- <router-link to="/">Back to View All Dogs</router-link> -->
@@ -26,6 +28,9 @@
 <style scoped>
 img {
   width: 400px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  transition: width 1s;
 }
 </style>
 

@@ -3,7 +3,11 @@
     <h1>All Playdate Events!</h1>
     <div align="center">
       <h2 class="text-muted">All Playdate Events!</h2>
-      <div v-for="event in events">
+      <div>
+        <button v-on:click="setSortAttribute('start_datetime')">Sort by Date</button>
+        <button v-on:click="setSortAttribute('place.location')">Sort by Location</button>
+      </div>
+      <div v-for="event in orderBy(events, sortAttribute, sortAscending)">
         <div align="center">
           <p>{{ event.start_datetime }}</p>
           <p>{{ event.end_datetime }}</p>
@@ -21,11 +25,15 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function() {
     return {
-      events: []
+      events: [],
+      sortAttribute: "start_datetime",
+      sortAscending: 1
     };
   },
 
@@ -65,6 +73,18 @@ export default {
         // this.$router.push("/my-events");
         // location: this.place.location
       };
+    },
+    setSortAttribute: function(inputAttribute) {
+      if (this.sortAttribute === inputAttribute) {
+        if (this.sortAscending === 1) {
+          this.sortAscending = -1;
+        } else {
+          this.sortAscending = 1;
+        }
+      } else {
+        this.sortAscending = 1;
+      }
+      this.sortAttribute = inputAttribute;
     }
   }
 };

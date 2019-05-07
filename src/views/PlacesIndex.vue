@@ -10,6 +10,8 @@
       </div>
     </section>
 
+    <div id="map"></div>
+
     <h1>Popular Dog Friendly Places!</h1>
     <div v-for="place in places">
       <div align="center">
@@ -37,11 +39,14 @@
   </div>
 </template>
 
-<!-- <style>
-body {
-  padding-bottom: 20px;
+<style>
+#map {
+  text-align: initial;
+  height: 500px;
+  width: 100%;
+  margin-bottom: 1em;
 }
-</style> -->
+</style>
 
 <head>
     <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -60,17 +65,79 @@ body {
   </head>
 
 <script>
+/* global mapboxgl */
 import axios from "axios";
 
 export default {
   data: function() {
     return {
-      places: []
+      places: [],
+      pin: [
+        {
+          lat: 41.9305,
+          long: -87.6534,
+          description: "Wiggly Field"
+        },
+        {
+          lat: 41.908,
+          long: -87.6767,
+          description: "Wicker Park Dog Park"
+        },
+        {
+          lat: 41.8705,
+          long: -87.6217,
+          description: "Grant Bark Park"
+        },
+        {
+          lat: 41.9691,
+          long: -87.6429,
+          description: "Montrose Dog Beach"
+        },
+        {
+          lat: 41.8804,
+          long: -87.6617,
+          description: "Skinner Dog Park"
+        },
+        {
+          lat: 41.885539,
+          long: -87.61686,
+          description: "Lakeshore East Dog Park"
+        },
+        {
+          lat: 41.8798,
+          long: -87.6502,
+          description: "Mary Bartelme Park"
+        },
+        {
+          lat: 41.868271,
+          long: -87.62584,
+          description: "Coliseum Park Dog Friendly Area"
+        }
+      ]
     };
   },
   created: function() {
     axios.get("/api/places").then(response => {
       this.places = response.data;
+    });
+  },
+
+  mounted: function() {
+    mapboxgl.accessToken = process.env.VUE_APP_MAPBOX_API_KEY;
+    var map = new mapboxgl.Map({
+      container: "map", // container id
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [-87.6619, 41.876465], // starting position [lng, lat]
+      minZoom: 10.5,
+      zoom: 11
+    });
+
+    this.pin.forEach(function(pin) {
+      var popup = new mapboxgl.Popup({ offset: 25 }).setText(pin.description);
+      var marker = new mapboxgl.Marker()
+        .setLngLat([pin.long, pin.lat])
+        .setPopup(popup)
+        .addTo(map);
     });
   },
   methods: {}

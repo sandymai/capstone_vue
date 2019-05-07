@@ -8,6 +8,10 @@
         <p>{{ event_attendee.event.end_datetime }}</p>
         <p>{{ event_attendee.event.place.location }}</p>
         <button v-on:click="destroyEventAttendee(event_attendee)">Remove Playdate</button>
+        <div></div>
+        <router-link v-bind:to="`/events-show/${event_attendee.event.id}`" tag="button">
+          See the Dogs Attending
+        </router-link>
       </div>
     </div>
   </div>
@@ -19,7 +23,8 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      event_attendees: []
+      event_attendees: [],
+      events: []
     };
   },
   created: function() {

@@ -13,6 +13,9 @@
 <style scoped>
 img {
   width: 400px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+  transition: width 1s;
 }
 </style>
 
