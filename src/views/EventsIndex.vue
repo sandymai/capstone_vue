@@ -1,22 +1,32 @@
 <template>
   <div class="events-index">
-    <h1>All Playdate Events!</h1>
-    <div align="center">
-      <h2 class="text-muted">All Playdate Events!</h2>
-      <div>
-        <button v-on:click="setSortAttribute('start_datetime')">Sort by Date</button>
-        <button v-on:click="setSortAttribute('place.location')">Sort by Location</button>
-      </div>
-      <div v-for="event in orderBy(events, sortAttribute, sortAscending)">
-        <div align="center">
-          <p>{{ event.start_datetime }}</p>
-          <p>{{ event.end_datetime }}</p>
-          <p>Where: {{ event.place.location }}</p>
-          <button v-on:click="createEventAttendees(event.id)">Join Playdate!</button>
-          <div></div>
-          <router-link v-bind:to="`/events-show/${event.id}`" tag="button">
-            See the Dogs Attending
-          </router-link>
+      <div class="places-index">
+        <section id="page-title">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 title-white">
+                <h2>All Playdate Events!</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <div>
+          <button v-on:click="setSortAttribute('start_datetime')" class="btn btn-default">Sort by Date</button>
+          <button v-on:click="setSortAttribute('place.location')" class="btn btn-default">Sort by Location</button>
+        </div>
+        <div v-for="event in orderBy(events, sortAttribute, sortAscending)">
+          <div align="center">
+            <p>{{ event.start_datetime }}</p>
+            <p>{{ event.end_datetime }}</p>
+            <p>Where: {{ event.place.location }}</p>
+            <button v-on:click="createEventAttendees(event.id)" class="btn btn-default">Join Playdate!</button>
+            <div></div>
+            <router-link v-bind:to="`/events-show/${event.id}`" tag="button" class="btn btn-default">
+              See the Dogs Attending
+            </router-link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,24 +1,35 @@
 <template>
   <div class="dogs-show">
-    <div align="center">
-      <h2 class="text-muted">Edit Your Dog's Profile</h2>
-      <img v-bind:src="dog.image_url" />
-      <p>{{ dog.dog_name }}</p>
-      <p>{{ dog.breed }}</p>
-      <p>{{ dog.description }}</p>
-      <div>
-        Name:
-        <input type="text" v-model="dog.dog_name" />
-        <div></div>
-        Breed:
-        <input type="text" v-model="dog.breed" />
-        <div></div>
-        Description:
-        <input type="text" v-model="dog.description" />
-        <div></div>
-        <button v-on:click="updateDog(dog)">Update Profile</button>
-        <div></div>
-        <button v-on:click="destroyDog(dog)">Delete Profile</button>
+      <section id="page-title">
+        <div class="container">
+          <div class="row">
+            <div class=".col-sm-50 .col-md-6 title-white">
+              <h2>Edit Your Dog's Profile</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div align="center">
+        <h2 class="text-muted"></h2>
+        <img v-bind:src="dog.image_url" />
+        <p>{{ dog.dog_name }}</p>
+        <p>{{ dog.breed }}</p>
+        <p>{{ dog.description }}</p>
+        <div>
+          Name:
+          <input type="text" v-model="dog.dog_name" />
+          <div></div>
+          Breed:
+          <input type="text" v-model="dog.breed" />
+          <div></div>
+          Description:
+          <input type="text" v-model="dog.description" />
+          <div></div>
+          <button class="btn btn-default" v-on:click="updateDog(dog)">Update Profile</button>
+          <div></div>
+          <button class="btn btn-default" v-on:click="destroyDog(dog)">Delete Profile</button>
+        </div>
       </div>
     </div>
   </div>

@@ -71,11 +71,11 @@
   </div>
 </template>
 
-<style>
+<!-- <style>
 body {
   padding-top: 100px;
 }
-</style>
+</style> -->
 
 <script>
 export default {

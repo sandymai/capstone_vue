@@ -1,6 +1,18 @@
 <template>
   <div class="attendees-show">
-    <h2 class="text-muted" align="center">All Dogs Attending This Playdate:</h2>
+    <section id="page-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 title">
+            <div align="center">
+              <h2>All Dogs Attending This Playdate:</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="text-muted" align="center"></h2>
     <div align="center" v-for="dog in event.dogs">
       <img v-bind:src="dog.image_url" />
       <p>Name: {{ dog.dog_name }}</p>

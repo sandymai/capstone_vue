@@ -1,41 +1,47 @@
 <template>
-  <div class="places-index">
-    <section id="page-title">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 title-white">
-            <h2>Paw-pular Dog Friendly Places!</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div id="map"></div>
-
-    <h1>Popular Dog Friendly Places!</h1>
-    <div v-for="place in places">
-      <div align="center">
-        <h2 class="text-muted">Location & Address:</h2>
-        <p>{{ place.location }}</p>
-        <p>{{ place.address }}</p>
-      </div>
-    </div>
-
-    <body>
-      <section id="message">
+    <div class="places-index">
+      <section id="page-title">
         <div class="container">
           <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-              <h4 class="gray">
-                Off-leash play in the city is only allowed in the dog-friendly areas at designated Chicago Park District
-                parks. Chicago Dog Parks are often referred to as dog-friendly areas and we have conveniently provided a
-                list of some of the most popular places!
-              </h4>
+            <div class="col-md-12 title-">
+        <div align="center">
+
+              <h2>Paw-pular Dog Friendly Places!</h2>
             </div>
           </div>
         </div>
+      </div>
       </section>
-    </body>
+
+<a class="weatherwidget-io" href="https://forecast7.com/en/41d88n87d63/chicago/?unit=us" data-label_1="CHICAGO" data-label_2="WEATHER" data-font="Trebuchet MS" data-icons="Climacons Animated" data-mode="Forecast" data-theme="sky" data-basecolor="rgba(110, 212, 246, 0.84)" data-highcolor="#ffffff" data-lowcolor="#b2f4f1" data-suncolor="#efff10" data-cloudfill="#38c8e0" >CHICAGO WEATHER</a>
+
+      <div id="map"></div>
+
+      <h1>Popular Dog Friendly Places!</h1>
+      <div v-for="place in places">
+        <div align="center">
+          <h2 class="text-muted">Location & Address:</h2>
+          <p>{{ place.location }}</p>
+          <p>{{ place.address }}</p>
+        </div>
+      </div>
+
+      <body>
+        <section id="message">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 text-center">
+                <h4 class="gray">
+                  Off-leash play in the city is only allowed in the dog-friendly areas at designated Chicago Park
+                  District parks. Chicago Dog Parks are often referred to as dog-friendly areas and we have conveniently
+                  provided a list of some of the most popular places!
+                </h4>
+              </div>
+            </div>
+          </div>
+        </section>
+      </body>
+    </div>
   </div>
 </template>
 
@@ -67,6 +73,9 @@
 <script>
 /* global mapboxgl */
 import axios from "axios";
+
+
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 
 export default {
   data: function() {
@@ -127,7 +136,7 @@ export default {
     var map = new mapboxgl.Map({
       container: "map", // container id
       style: "mapbox://styles/mapbox/streets-v11",
-      center: [-87.6619, 41.876465], // starting position [lng, lat]
+      center: [-87.6619, 41.87646], // starting position [lng, lat]
       minZoom: 10.5,
       zoom: 11
     });

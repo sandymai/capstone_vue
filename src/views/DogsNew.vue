@@ -1,26 +1,38 @@
 <template>
   <div class="dogs-new">
     <div align="center">
-      <h2 class="text-muted">Add a New Dog Profile</h2>
-      <ul>
-        <li v-for="error in errors">{{ error }}</li>
-      </ul>
-      <form v-on:submit.prevent="submit()">
-        <div>
-          Dog Name :
-          <input type="text" v-model="newDogName" />
-          <div></div>
-          Breed :
-          <input type="text" v-model="newBreed" />
-          <div></div>
-          Description :
-          <input type="text" v-model="newDescription" />
-        </div>
-        <div>
-          <input type="file" v-on:change="setFile($event)" ref="fileInput" />
-        </div>
-        <input type="submit" value="Create New Profile!" />
-      </form>
+      <div class="places-index">
+        <section id="page-title">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 -white">
+                <h2>Add a New Dog Profile</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <h2 class="text-muted"></h2>
+        <ul>
+          <li v-for="error in errors">{{ error }}</li>
+        </ul>
+        <form v-on:submit.prevent="submit()">
+          <div>
+            Dog Name :
+            <input type="text" v-model="newDogName" />
+            <div></div>
+            Breed :
+            <input type="text" v-model="newBreed" />
+            <div></div>
+            Description :
+            <input type="text" v-model="newDescription" />
+          </div>
+          <div>
+            <input type="file" v-on:change="setFile($event)" ref="fileInput" />
+          </div>
+          <input type="submit" value="Create New Profile!" />
+        </form>
+      </div>
     </div>
   </div>
 </template>

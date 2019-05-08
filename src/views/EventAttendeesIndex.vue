@@ -1,17 +1,30 @@
 <template>
   <div class="events-show">
     <div align="center">
-      <h2>My Playdate Events</h2>
-      <div v-for="event_attendee in event_attendees" v-if="event_attendee.event">
-        <h2 class="text-muted">Playdate Details:</h2>
-        <p>{{ event_attendee.event.start_datetime }}</p>
-        <p>{{ event_attendee.event.end_datetime }}</p>
-        <p>{{ event_attendee.event.place.location }}</p>
-        <button v-on:click="destroyEventAttendee(event_attendee)">Remove Playdate</button>
-        <div></div>
-        <router-link v-bind:to="`/events-show/${event_attendee.event.id}`" tag="button">
-          See the Dogs Attending
-        </router-link>
+      <div class="places-index">
+        <section id="page-title">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 -white">
+                <h2>All My Playdate Events</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div align="center">
+          <div v-for="event_attendee in event_attendees" v-if="event_attendee.event">
+            <h2 class="text-muted">Playdate Details:</h2>
+            <p>{{ event_attendee.event.start_datetime }}</p>
+            <p>{{ event_attendee.event.end_datetime }}</p>
+            <p>{{ event_attendee.event.place.location }}</p>
+            <button v-on:click="destroyEventAttendee(event_attendee)">Remove Playdate</button>
+            <div></div>
+            <router-link v-bind:to="`/events-show/${event_attendee.event.id}`" tag="button">
+              See the Dogs Attending
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>

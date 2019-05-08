@@ -37,7 +37,7 @@
       <div class="container">
         <div class="row margin-40">
           <div class="col-md-12">
-            <h3><span class="blue">Meet Some Top Dogs!</span></h3>
+            <h4><span class="gray">Meet Some Top Dogs!</span></h4>
           </div>
         </div>
 
@@ -53,7 +53,6 @@
                   <em>Attended 45 Playdates</em>
                 </span>
               </span>
-            </a>
           </div>
 
           <!--Team Member-->
@@ -67,7 +66,6 @@
                   <em>Attended 39 Playdates</em>
                 </span>
               </span>
-            </a>
           </div>
 
           <!--Team Member-->
