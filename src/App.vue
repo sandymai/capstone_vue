@@ -10,7 +10,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-header" href="https://i.ibb.co/GWyBw7G/PPPP.png">
-            <img src="https://i.ibb.co/GWyBw7G/PPPP.png" alt="Logo" />
+            <img src="https://i.ibb.co/r712YPJ/logo-transparent.png" alt="Logo" />
           </a>
         </div>
         <div class="navbar-collapse collapse">
