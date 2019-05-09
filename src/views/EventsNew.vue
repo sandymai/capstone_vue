@@ -5,7 +5,11 @@
         <div class="row">
           <div class="col-md-12 title">
             <div align="center">
-              <h2>Create a New Playdate Event</h2>
+              <h1>
+                Create a New Playdate Event
+                <br />
+                <br />
+              </h1>
             </div>
           </div>
         </div>
@@ -17,24 +21,29 @@
       <li v-for="error in errors">{{ error }}</li>
     </ul>
     <form v-on:submit.prevent="createEvent()">
-      <div>
-        Start Time :
-        <input type="datetime-local" v-model="newStartTime" />
-        <div></div>
-        End Time :
-        <input type="datetime-local" v-model="newEndTime" />
-        <div></div>
-        Location :
-        <!-- <input type="text" v-model="newLocation" /> -->
-        <select v-model="newLocation">
-          <option v-for="place in places" v-bind:value="place.id">{{ place.location }}</option>
-        </select>
-        <div></div>
+      <div align="center">
+        <div>
+          Start Time :
+          <input type="datetime-local" v-model="newStartTime" />
+          <div></div>
+          End Time :
+          <input type="datetime-local" v-model="newEndTime" />
+          <div></div>
+          Location :
+          <select v-model="newLocation">
+            <option v-for="place in places" v-bind:value="place.id">{{ place.location }}</option>
+          </select>
+          <div></div>
+        </div>
       </div>
-      <input type="submit" value="Create Event!" />
+      <div align="center">
+        <input type="submit" value="Create Event!" />
+      </div>
     </form>
   </div>
 </template>
+
+<style></style>
 
 <script>
 var axios = require("axios");

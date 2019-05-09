@@ -6,7 +6,11 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 -white">
-                <h2>Add a New Dog Profile</h2>
+                <h1>
+                  Add a New Dog Profile
+                  <br />
+                  <br />
+                </h1>
               </div>
             </div>
           </div>
@@ -16,6 +20,8 @@
         <ul>
           <li v-for="error in errors">{{ error }}</li>
         </ul>
+        <br />
+        <br />
         <form v-on:submit.prevent="submit()">
           <div>
             Dog Name :
@@ -30,6 +36,7 @@
           <div>
             <input type="file" v-on:change="setFile($event)" ref="fileInput" />
           </div>
+          <br />
           <input type="submit" value="Create New Profile!" />
         </form>
       </div>

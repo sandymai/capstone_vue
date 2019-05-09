@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 title-blue">
-            <h2>About PoochParty</h2>
+            <h1>About PoochParty</h1>
           </div>
         </div>
       </div>

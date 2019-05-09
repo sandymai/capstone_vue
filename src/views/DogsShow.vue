@@ -1,39 +1,39 @@
 <template>
   <div class="dogs-show">
-      <section id="page-title">
-        <div class="container">
-          <div class="row">
-            <div class=".col-sm-50 .col-md-6 title-white">
-              <h2>Edit Your Dog's Profile</h2>
-            </div>
+    <section id="page-title">
+      <div class="container">
+        <div class="row">
+          <div class=".col-sm-50 .col-md-6 title-white">
+            <h1>Edit Your Dog's Profile</h1>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <div align="center">
-        <h2 class="text-muted"></h2>
-        <img v-bind:src="dog.image_url" />
-        <p>{{ dog.dog_name }}</p>
-        <p>{{ dog.breed }}</p>
-        <p>{{ dog.description }}</p>
-        <div>
-          Name:
-          <input type="text" v-model="dog.dog_name" />
-          <div></div>
-          Breed:
-          <input type="text" v-model="dog.breed" />
-          <div></div>
-          Description:
-          <input type="text" v-model="dog.description" />
-          <div></div>
-          <button class="btn btn-default" v-on:click="updateDog(dog)">Update Profile</button>
-          <div></div>
-          <button class="btn btn-default" v-on:click="destroyDog(dog)">Delete Profile</button>
-        </div>
+    <div align="center">
+      <h2 class="text-muted"></h2>
+      <img v-bind:src="dog.image_url" />
+      <p>{{ dog.dog_name }}</p>
+      <p>{{ dog.breed }}</p>
+      <p>{{ dog.description }}</p>
+      <div>
+        Name:
+        <input type="text" v-model="dog.dog_name" />
+        <div></div>
+        Breed:
+        <input type="text" v-model="dog.breed" />
+        <div></div>
+        Description:
+        <input type="text" v-model="dog.description" />
+        <div></div>
+        <button class="btn btn-default" v-on:click="updateDog(dog)">Update Profile</button>
+        <div></div>
+        <button class="btn btn-default" v-on:click="destroyDog(dog)">Delete Profile</button>
       </div>
     </div>
+    <br />
+    <br />
   </div>
-  <!-- <router-link to="/">Back to View All Dogs</router-link> -->
 </template>
 
 <style scoped>

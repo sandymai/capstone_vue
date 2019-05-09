@@ -5,7 +5,11 @@
         <div class="row">
           <div class="col-md-12 title">
             <div align="center">
-              <h2>All Dogs Attending This Playdate:</h2>
+              <h1>
+                All Dogs Attending This Playdate:
+                <br />
+                <br />
+              </h1>
             </div>
           </div>
         </div>
@@ -15,9 +19,13 @@
     <h2 class="text-muted" align="center"></h2>
     <div align="center" v-for="dog in event.dogs">
       <img v-bind:src="dog.image_url" />
+      <br />
+      <br />
       <p>Name: {{ dog.dog_name }}</p>
       <p>Breed: {{ dog.breed }}</p>
       <p>Description: {{ dog.description }}</p>
+      <br />
+      <br />
     </div>
   </div>
 </template>

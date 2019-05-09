@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 title-blue">
-            <h2>Login Here!</h2>
+            <h1>Login Here!</h1>
           </div>
         </div>
       </div>
@@ -36,11 +36,11 @@
                 <li class="text-danger" v-for="error in errors">{{ error }}</li>
               </ul>
               <div class="form-group">
-                <label>EMAIL :</label>
+                <label>Email :</label>
                 <input type="email" class="form-control" v-model="email" />
               </div>
               <div class="form-group">
-                <label>PASSWORD :</label>
+                <label>Password :</label>
                 <input type="password" class="form-control" v-model="password" />
               </div>
               <input type="submit" class="btn btn-primary" value="Submit" />

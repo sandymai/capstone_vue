@@ -6,7 +6,11 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 -white">
-                <h2>All My Playdate Events</h2>
+                <h1>
+                  All My Playdate Events
+                  <br />
+                  <br />
+                </h1>
               </div>
             </div>
           </div>
@@ -25,6 +29,8 @@
             </router-link>
           </div>
         </div>
+        <br />
+        <br />
       </div>
     </div>
   </div>

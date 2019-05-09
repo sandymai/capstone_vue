@@ -1,56 +1,84 @@
 <template>
-    <div class="places-index">
-      <section id="page-title">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 title-">
-        <div align="center">
-
-              <h2>Paw-pular Dog Friendly Places!</h2>
+  <div class="places-index">
+    <section id="page-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 title-">
+            <div align="center">
+              <h1>
+                Paw-pular Dog Friendly Places!
+                <br />
+                <br />
+              </h1>
             </div>
           </div>
         </div>
       </div>
-      </section>
+    </section>
 
-<a class="weatherwidget-io" href="https://forecast7.com/en/41d88n87d63/chicago/?unit=us" data-label_1="CHICAGO" data-label_2="WEATHER" data-font="Trebuchet MS" data-icons="Climacons Animated" data-mode="Forecast" data-theme="sky" data-basecolor="rgba(110, 212, 246, 0.84)" data-highcolor="#ffffff" data-lowcolor="#b2f4f1" data-suncolor="#efff10" data-cloudfill="#38c8e0" >CHICAGO WEATHER</a>
+    <a
+      class="weatherwidget-io"
+      href="https://forecast7.com/en/41d88n87d63/chicago/?unit=us"
+      data-label_1="CHICAGO"
+      data-label_2="WEATHER"
+      data-font="Trebuchet MS"
+      data-icons="Climacons Animated"
+      data-mode="Forecast"
+      data-theme="sky"
+      data-basecolor="rgba(110, 212, 246, 0.84)"
+      data-highcolor="#ffffff"
+      data-lowcolor="#b2f4f1"
+      data-suncolor="#efff10"
+      data-cloudfill="#38c8e0"
+    >
+      CHICAGO WEATHER
+    </a>
 
-      <div id="map"></div>
-
+    <div id="map"></div>
+    <div align="center">
       <h1>Popular Dog Friendly Places!</h1>
-      <div v-for="place in places">
-        <div align="center">
+      <div class="places row">
+        <div class="col-md-4 card" v-for="place in places">
           <h2 class="text-muted">Location & Address:</h2>
           <p>{{ place.location }}</p>
           <p>{{ place.address }}</p>
         </div>
       </div>
+      <br />
+      <br />
+    </div>
 
-      <body>
-        <section id="message">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1 text-center">
-                <h4 class="gray">
-                  Off-leash play in the city is only allowed in the dog-friendly areas at designated Chicago Park
-                  District parks. Chicago Dog Parks are often referred to as dog-friendly areas and we have conveniently
-                  provided a list of some of the most popular places!
-                </h4>
-              </div>
+    <body>
+      <section id="message">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+              <h4 class="gray">
+                Off-leash play in the city is only allowed in the dog-friendly areas at designated Chicago Park District
+                parks. Chicago Dog Parks are often referred to as dog-friendly areas and we have conveniently provided a
+                list of some of the most popular places!
+              </h4>
             </div>
           </div>
-        </section>
-      </body>
-    </div>
+        </div>
+      </section>
+    </body>
   </div>
 </template>
 
 <style>
 #map {
   text-align: initial;
-  height: 500px;
-  width: 100%;
+  height: 450px;
+  width: 80%;
   margin-bottom: 1em;
+  display: block;
+  margin: 0 auto;
+}
+
+.places {
+  display: block;
+  margin: 0 auto;
 }
 </style>
 
@@ -74,8 +102,16 @@
 /* global mapboxgl */
 import axios from "axios";
 
-
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+!(function(d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://weatherwidget.io/js/widget.min.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+})(document, "script", "weatherwidget-io-js");
 
 export default {
   data: function() {
@@ -121,6 +157,26 @@ export default {
           lat: 41.868271,
           long: -87.62584,
           description: "Coliseum Park Dog Friendly Area"
+        },
+        {
+          lat: 41.859732,
+          long: -87.625649,
+          description: "Anderson (Fred) Dog Friendly Areas"
+        },
+        {
+          lat: 44.46304,
+          long: -88.071351,
+          description: "Walsh Dog Friendly Areas"
+        },
+        {
+          lat: 41.914792,
+          long: -87.677554,
+          description: "Churchill Dog Friendly Areas"
+        },
+        {
+          lat: 41.892852,
+          long: -87.640929,
+          description: "Ward Dog Friendly Areas"
         }
       ]
     };
@@ -136,7 +192,7 @@ export default {
     var map = new mapboxgl.Map({
       container: "map", // container id
       style: "mapbox://styles/mapbox/streets-v11",
-      center: [-87.6619, 41.87646], // starting position [lng, lat]
+      center: [-87.6519, 41.87646], // starting position [lng, lat]
       minZoom: 10.5,
       zoom: 11
     });

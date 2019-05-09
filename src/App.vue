@@ -55,7 +55,9 @@
         </div>
       </div>
     </div>
-    <router-view v-on:changeJwt="setJwt()" />
+    <div class="main-view">
+      <router-view v-on:changeJwt="setJwt()" />
+    </div>
     <!-- FOOTER -->
     <section id="footer">
       <div class="container">
@@ -71,11 +73,17 @@
   </div>
 </template>
 
-<!-- <style>
-body {
-  padding-top: 100px;
+<style>
+.main-view {
+  padding-top: 110px;
+  padding-bottom: 70px;
 }
-</style> -->
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+</style>
 
 <script>
 export default {

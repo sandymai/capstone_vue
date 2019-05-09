@@ -5,19 +5,23 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 title-white">
-                <h2>All Playdate Events!</h2>
+                <h1>All Playdate Events!</h1>
               </div>
             </div>
           </div>
         </section>
+
+          <div align="center">
+            <br><br>
 
 
         <div>
           <button v-on:click="setSortAttribute('start_datetime')" class="btn btn-default">Sort by Date</button>
           <button v-on:click="setSortAttribute('place.location')" class="btn btn-default">Sort by Location</button>
         </div>
+        <br><br>
+
         <div v-for="event in orderBy(events, sortAttribute, sortAscending)">
-          <div align="center">
             <p>{{ event.start_datetime }}</p>
             <p>{{ event.end_datetime }}</p>
             <p>Where: {{ event.place.location }}</p>
@@ -26,6 +30,7 @@
             <router-link v-bind:to="`/events-show/${event.id}`" tag="button" class="btn btn-default">
               See the Dogs Attending
             </router-link>
+            <br><br>
           </div>
         </div>
       </div>
