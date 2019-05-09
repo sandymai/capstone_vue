@@ -37,7 +37,7 @@
             <input type="file" v-on:change="setFile($event)" ref="fileInput" />
           </div>
           <br />
-          <input type="submit" value="Create New Profile!" />
+          <input type="submit" class="btn btn-info" value="Create New Profile!" />
         </form>
       </div>
     </div>

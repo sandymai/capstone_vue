@@ -37,7 +37,7 @@
         </div>
       </div>
       <div align="center">
-        <input type="submit" value="Create Event!" />
+        <input type="submit" class="btn btn-info" value="Create Event!" />
       </div>
     </form>
   </div>

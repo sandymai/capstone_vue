@@ -13,6 +13,8 @@
     <div align="center">
       <h2 class="text-muted"></h2>
       <img v-bind:src="dog.image_url" />
+      <br />
+      <br />
       <p>{{ dog.dog_name }}</p>
       <p>{{ dog.breed }}</p>
       <p>{{ dog.description }}</p>

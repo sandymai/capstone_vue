@@ -1,42 +1,52 @@
 <template>
   <div class="events-index">
-      <div class="places-index">
-        <section id="page-title">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 title-white">
-                <h1>All Playdate Events!</h1>
-              </div>
+    <div class="places-index">
+      <section id="page-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 title-white">
+              <h1>All Playdate Events!</h1>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-          <div align="center">
-            <br><br>
-
+      <div align="center">
+        <br />
+        <br />
 
         <div>
           <button v-on:click="setSortAttribute('start_datetime')" class="btn btn-default">Sort by Date</button>
           <button v-on:click="setSortAttribute('place.location')" class="btn btn-default">Sort by Location</button>
         </div>
-        <br><br>
+        <br />
+        <br />
 
-        <div v-for="event in orderBy(events, sortAttribute, sortAscending)">
-            <p>{{ event.start_datetime }}</p>
-            <p>{{ event.end_datetime }}</p>
-            <p>Where: {{ event.place.location }}</p>
-            <button v-on:click="createEventAttendees(event.id)" class="btn btn-default">Join Playdate!</button>
-            <div></div>
-            <router-link v-bind:to="`/events-show/${event.id}`" tag="button" class="btn btn-default">
-              See the Dogs Attending
-            </router-link>
-            <br><br>
-          </div>
+        <div class="col-md-4 card" v-for="event in orderBy(events, sortAttribute, sortAscending)">
+          <p>{{ event.start_datetime }}</p>
+          <p>{{ event.end_datetime }}</p>
+          <p>Where: {{ event.place.location }}</p>
+          <button v-on:click="createEventAttendees(event.id)" class="btn btn-info">Join Playdate!</button>
+          <div></div>
+          <router-link v-bind:to="`/events-show/${event.id}`" tag="button" class="btn btn-default">
+            See the Dogs Attending
+          </router-link>
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.events {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 70px;
+}
+</style>
 
 <script>
 import axios from "axios";

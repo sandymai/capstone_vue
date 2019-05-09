@@ -14,8 +14,8 @@
                 </video> -->
                 <!-- <img src="https://i.ibb.co/zNQg69G/Screen-Shot-2019-04-17-at-7-33-09-PM.png" alt="Title" /> -->
                 <div class="row text-center">
-                  <div class="col-sm-10 col-sm-offset-1">
-                    <div class="col-md-6 text-center">
+                  <div class="col-sm-11 col-sm-offset-1">
+                    <div class="col-md-7 text-center">
                       <img
                         src="http://pluspng.com/img-png/cat-and-dog-png-no-background-puppy-training-classes-925.png"
                         class="img-responsive"
@@ -25,6 +25,8 @@
                     <h1>
                       Welcome to PoochParty, a platform to create or join meet ups so your dogs can socialize and make
                       fur-ever friends!
+                      <br />
+                      <br />
                     </h1>
                     <br />
                     <a class="btn-main" href="/about">Learn More</a>
@@ -33,12 +35,16 @@
               </li>
 
               <li>
-                <img src="img/header2.png" alt="Title" />
-                <div class="row text-center">
-                  <div class="col-sm-10 col-sm-offset-1">
-                    <h1>Built to look good on all devices. Resize your browser to take a look for yourself.</h1>
-                    <br />
-                    <a class="btn-main" href="/about">Learn More</a>
+                <div align="center">
+                  <img src="https://clipart.info/images/ccovers/1503688591cute-dog-family-png.png" alt="Title" />
+                  <div class="row text-center">
+                    <div class="col-sm-10 col-sm-offset-1">
+                      <h2>
+                        Making friends doesn't have to be 'ruff'!
+                      </h2>
+                      <br />
+                      <a class="btn-main" href="/about">Learn More</a>
+                    </div>
                   </div>
                 </div>
               </li>

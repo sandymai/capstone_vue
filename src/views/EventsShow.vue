@@ -17,13 +17,15 @@
     </section>
 
     <h2 class="text-muted" align="center"></h2>
-    <div align="center" v-for="dog in event.dogs">
+    <div class="col-md-4 card" v-for="dog in event.dogs">
       <img v-bind:src="dog.image_url" />
       <br />
       <br />
       <p>Name: {{ dog.dog_name }}</p>
       <p>Breed: {{ dog.breed }}</p>
       <p>Description: {{ dog.description }}</p>
+      <br />
+      <br />
       <br />
       <br />
     </div>

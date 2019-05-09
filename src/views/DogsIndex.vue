@@ -15,15 +15,15 @@
 
     <div class="dogs row">
       <div class="col-md-4 card" v-for="dog in dogs">
-        <!--              <div class="row">
-        <div class="column"> -->
-        <div align="center">
+        <!-- <div align="center"> -->
           <h2 class="text-muted"></h2>
           <img v-bind:src="dog.image_url" />
+          <br />
+          <br />
           <p>Name: {{ dog.dog_name }}</p>
           <p>Breed: {{ dog.breed }}</p>
           <p>Description: {{ dog.description }}</p>
-          <router-link v-bind:to="`/dogs/${dog.id}`" tag="button" class="btn btn-default">
+          <router-link v-bind:to="`/dogs/${dog.id}`" tag="button" class="btn btn-info">
             View/Edit Profile
           </router-link>
           <div></div>
